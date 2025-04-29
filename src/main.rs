@@ -1,24 +1,15 @@
-// fn main() {
-//     println!("Hello, world!");
-// }
+use std::io::{self, Write}; // thêm Write để flush
+fn main() {
+    let mut input = String::new();
 
-// use std::io;
+    println!("Nhập tên của bạn");
 
-// fn main() {
-//     println!("Please input your guess.");
-//     let mut guess = String::new();
-//     io::stdin()
-//         .read_line(&mut guess)
-//         .expect("Failed to read line");
-//     println!("You guessed: {}", guess);
-// }
-fn main(){
-    let tup = (10, 20, 30);
-    let(x,y,z) = tup;
-    let a = [1,2,3,4];
-    // let a  = 10;
-    // let a = a + 5;
-    // let b = 20;
-    // println!("Tổng là : {}", a + b);
-    println!("Tổng là : {}",a[1]);
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Lỗi khi đọc dòng");
+    println!("Chào bạn {} \n ",input.trim());
+     // Dừng lại đợi Enter
+     println!("Nhấn Enter để thoát...");
+     let mut dummy = String::new();
+     io::stdin().read_line(&mut dummy).unwrap();
 }
